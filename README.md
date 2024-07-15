@@ -3,3 +3,4 @@ The project was created and edited in PyCharm, I didn't tried to see if it works
 In the "main.py" file you can find which libraries were used.
 The "myapp.kv" file contains the code for the interface and its features (interactive blocks like buttons, search bar).
 The "data.json" represents the app's database.
+The best way to handle the project is probably to download the files in the same directory, then open them with PyCharm.
