@@ -1,0 +1,65 @@
+
+
+<MainScreen>:
+    name: 'main_menu'
+    BoxLayout:
+        orientation: 'vertical'
+        MDToolbar:
+            title: "Artists"
+            md_bg_color: app.theme_cls.primary_color
+        MDTextField:
+            id: search_field
+            hint_text: "Search Artist"
+            on_text: root.on_search_text(self, self.text)
+            size_hint_x: None
+            width: dp(300)
+            pos_hint: {'center_x': 0.5}
+        ScrollView:
+            FloatLayout:  # Use FloatLayout for flexible positioning
+                id: artists_layout
+                size_hint_y: None
+                height: self.minimum_height
+                padding: dp(10)
+                spacing: dp(10)
+        ScrollView:
+            BoxLayout:
+                id: artists_layout
+                orientation: 'vertical'
+                size_hint_y: None
+                height: self.minimum_height
+                padding: dp(10)
+                spacing: dp(10)
+
+<ArtistScreen>:
+    name: 'artist_screen'
+    BoxLayout:
+        orientation: 'vertical'
+        MDToolbar:
+            title: "Artist Details"
+            md_bg_color: app.theme_cls.primary_color
+            left_action_items: [["arrow-left", lambda x: app.change_screen('main_menu')]]
+        ScrollView:
+            BoxLayout:
+                id: artist_info
+                orientation: 'vertical'
+                size_hint_y: None
+                height: self.minimum_height
+                padding: dp(10)
+                spacing: dp(10)
+
+<AlbumScreen>:
+    name: 'album_screen'
+    BoxLayout:
+        orientation: 'vertical'
+        MDToolbar:
+            title: "Album Details"
+            md_bg_color: app.theme_cls.primary_color
+            left_action_items: [["arrow-left", lambda x: app.change_screen('artist_screen')]]
+        ScrollView:
+            BoxLayout:
+                id: album_info
+                orientation: 'vertical'
+                size_hint_y: None
+                height: self.minimum_height
+                padding: dp(10)
+                spacing: dp(10)
